@@ -37,7 +37,15 @@ const revealObserver = new IntersectionObserver(
   }
 );
 
-revealNodes.forEach((node) => revealObserver.observe(node));
+const observeRevealNode = (node) => {
+  if (!node) {
+    return;
+  }
+
+  revealObserver.observe(node);
+};
+
+revealNodes.forEach(observeRevealNode);
 
 const updateScrollProgress = () => {
   const scrollTop = window.scrollY;
