@@ -3,6 +3,7 @@ const siteNav = document.querySelector(".site-nav");
 const progressBar = document.querySelector(".scroll-progress");
 const revealNodes = document.querySelectorAll(".reveal");
 const visitCountNode = document.querySelector("#visit-count");
+const lettersPanels = document.querySelectorAll(".letters-panel");
 
 const COUNTER_UP_API =
   "https://api.counterapi.dev/v2/hoan-kieu-dinhs-team-3626/caunoithoigian/up";
@@ -23,22 +24,30 @@ if (navToggle && siteNav) {
   });
 }
 
-const revealObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("is-visible");
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  },
-  {
-    threshold: 0.18,
-  }
-);
+const revealObserver =
+  typeof IntersectionObserver === "function"
+    ? new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.18,
+        }
+      )
+    : null;
 
 const observeRevealNode = (node) => {
   if (!node) {
+    return;
+  }
+
+  if (!revealObserver) {
+    node.classList.add("is-visible");
     return;
   }
 
@@ -46,6 +55,18 @@ const observeRevealNode = (node) => {
 };
 
 revealNodes.forEach(observeRevealNode);
+
+lettersPanels.forEach((panel) => {
+  panel.addEventListener("toggle", () => {
+    if (!panel.open) {
+      return;
+    }
+
+    panel.querySelectorAll(".reveal").forEach((node) => {
+      node.classList.add("is-visible");
+    });
+  });
+});
 
 const updateScrollProgress = () => {
   const scrollTop = window.scrollY;
