@@ -618,13 +618,12 @@ a {
 
 .letters-panel {
   margin: 2.2rem 0 2.5rem;
-  border: 1px solid rgba(139, 30, 45, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 24px;
-  background: rgba(255, 250, 242, 0.98);
+  background: rgba(255, 255, 255, 0.08);
   box-shadow: var(--shadow);
   overflow: hidden;
   text-align: left;
-  color: var(--ink);
 }
 
 .letters-summary {
@@ -643,13 +642,13 @@ a {
 
 .letters-summary strong,
 .letter-author {
-  color: var(--red-deep);
+  color: #fffdf7;
 }
 
 .letters-summary small {
   display: block;
   margin-top: 0.35rem;
-  color: var(--ink-soft);
+  color: rgba(255, 248, 236, 0.82);
   line-height: 1.6;
 }
 
@@ -659,8 +658,8 @@ a {
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 50%;
-  border: 1px solid rgba(139, 30, 45, 0.14);
-  background: rgba(139, 30, 45, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
   transition: transform 180ms ease, background 180ms ease;
 }
 
@@ -672,7 +671,7 @@ a {
   left: 50%;
   width: 0.9rem;
   height: 2px;
-  background: var(--red-deep);
+  background: #fff7eb;
   transform: translate(-50%, -50%);
 }
 
@@ -705,8 +704,8 @@ a {
   margin: 0;
   padding: 1rem 1.1rem;
   border-radius: 16px;
-  color: var(--ink);
-  background: rgba(139, 30, 45, 0.05);
+  color: rgba(255, 248, 236, 0.9);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .letters-region {
@@ -720,9 +719,9 @@ a {
   justify-content: space-between;
   gap: 1rem;
   padding: 0.95rem 1.1rem;
-  border: 1px solid rgba(139, 30, 45, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
-  background: rgba(212, 160, 23, 0.18);
+  background: rgba(212, 160, 23, 0.12);
 }
 
 .letters-region-header h3,
@@ -731,12 +730,12 @@ a {
 }
 
 .letters-region-header h3 {
-  color: var(--red-deep);
+  color: #fffdf7;
   font-size: 1.05rem;
 }
 
 .letters-region-header p {
-  color: var(--ink-soft);
+  color: rgba(255, 248, 236, 0.76);
   font-size: 0.92rem;
 }
 
@@ -748,9 +747,9 @@ a {
 
 .letter-card {
   padding: 1.15rem 1.2rem;
-  border: 1px solid rgba(139, 30, 45, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.07);
 }
 
 .letter-author {
@@ -761,7 +760,7 @@ a {
 .letter-card p:last-child {
   margin: 0;
   line-height: 1.8;
-  color: var(--ink);
+  color: rgba(255, 248, 236, 0.9);
 }
 
 .tribute-grid article {
